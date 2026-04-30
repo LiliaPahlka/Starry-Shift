@@ -23,6 +23,7 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 		this.addKeyListener(this);
 		key =-1;
 		screen = 'S';
+		initializeBackground();
 		img = new Character
 	
 	}
@@ -75,7 +76,7 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 
 	public void initializeBackground(){
 		bg = new Background(getWidth());
-		background = new ImageIcon(bg.getBackground());
+		background = new ImageIcon("skybg.jpg");
 		loseBG = new ImageIcon ("losebg.jpg");
 	}
 	
