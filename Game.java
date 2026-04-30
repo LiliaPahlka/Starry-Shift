@@ -29,50 +29,47 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 	
 	}
 
-	public void screen(Graphics g2d){		
-		switch(screen){
+	public void screen(Graphics g2d){        
+    switch(screen){
 
-			case 'S':
-			g2d.clearRect(0,0,getWidth(),getHeight());
-			g2d.drawImage(background.getImage(), 0, 0, getWidth(), getHeight(), this);
-			g2d.setFont(new Font("Georgia", Font.BOLD, 65));
-			Color GreenColor= new Color(74, 158, 122);
-			g2d.setColor(GreenColor);
-			g2d.drawString("Press S to Start", getWidth()/2 - 250, getHeight()/2 - 60);
-			g2d.drawString("and P to Pause", getWidth()/2 - 250, getHeight()/2 + 30);
-			break;
+        case 'S':
+            g2d.clearRect(0,0,getWidth(),getHeight());
+            g2d.drawImage(background.getImage(), 0, 0, getWidth(), getHeight(), this);
+            g2d.setFont(new Font("Georgia", Font.BOLD, 65));
+            Color GreenColor= new Color(74, 158, 122);
+            g2d.setColor(GreenColor);
+            g2d.drawString("Press S to Start", getWidth()/2 - 250, getHeight()/2 - 60);
+            g2d.drawString("and P to Pause", getWidth()/2 - 250, getHeight()/2 + 30);
+            break;
 
-			case 'G':
-			break;
+        case 'G':
+            break;
 
-			case 'P':
-			g2d.clearRect(0,0,getSize().width,getSize().height);
-			g2d.drawImage(background.getImage(), bg.getX(), 0, getWidth(), getHeight(), this);
-			g2d.drawImage(background.getImage(), bg.getX() + getWidth(), 0, getWidth(), getHeight(), this);
-			g2d.setFont(new Font("Georgia", Font.BOLD, 75));
-			Color stemGreenColor= new Color(74, 158, 122);
-			g2d.setColor(stemGreenColor);
-			int x = getWidth()/2 - 150;
-			int y = getHeight()/2; 
-			g2d.drawString("Paused", x, y);
+        case 'P':
+            g2d.clearRect(0,0,getSize().width,getSize().height);
+            g2d.drawImage(background.getImage(), bg.getX(), 0, getWidth(), getHeight(), this);
+            g2d.drawImage(background.getImage(), bg.getX() + getWidth(), 0, getWidth(), getHeight(), this);
+            g2d.setFont(new Font("Georgia", Font.BOLD, 75));
+            Color stemGreenColor= new Color(74, 158, 122);
+            g2d.setColor(stemGreenColor);
+            int x = getWidth()/2 - 150;
+            int y = getHeight()/2; 
+            g2d.drawString("Paused", x, y);
+            break;
 
+        case 'L':
+            g2d.clearRect(0, 0, getWidth(), getHeight());
+            g2d.drawImage(loseBG.getImage(), 0, 0, getWidth(), getHeight(), this);
+            g2d.setFont(new Font("Georgia", Font.BOLD, 65)); 
+            g2d.setColor(Color.blue); 
+            g2d.drawString("You Lost!", getWidth()/2 - 160, getHeight()/2 - 60); 
+            g2d.drawString("Score: " + score, getWidth()/2 - 130, getHeight()/2 + 10);
+            g2d.drawString("Press R to Restart", getWidth()/2 - 310, getHeight()/2 + 80);
+            break;
+    }
 
-
-			break;
-
-			case 'L':
-			
-			g2d.clearRect(0, 0, getWidth(), getHeight());
-			g2d.drawImage(loseBG.getImage(), 0, 0, getWidth(), getHeight(), this);
-			g2d.setFont(new Font("Georgia", Font.BOLD, 65)); 
-			g2d.setColor(Color.blue); 
-			g2d.drawString("You Lost!", getWidth()/2 - 160, getHeight()/2 - 60); 
-			g2d.drawString("Score: " + score, getWidth()/2 - 130, getHeight()/2 + 10);
-			g2d.drawString("Press R to Restart", getWidth()/2 - 310, getHeight()/2 + 80);
-			}
-			
-			return;		
-	}
+    return;
+}
 
 	public void initializeBackground(){
 		bg = new Background(0);
