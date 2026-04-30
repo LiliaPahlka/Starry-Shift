@@ -12,6 +12,7 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 	private int key;
 	private ImageIcon background;
 	private Background bg;
+	private Image Icon loseBG;
 	private Character img;
 	private int score = 0;
 	private char screen;
@@ -24,7 +25,7 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 		key =-1;
 		screen = 'S';
 		initializeBackground();
-		img = new Character
+		img = new Character();
 	
 	}
 
@@ -120,11 +121,11 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 		g2d.drawImage(background.getImage(), bg.getX() + getWidth(), 0, getWidth(), getHeight(), this);
 
 		if (screen == 'G'){
-			bg.move;
-			img.move;
+			bg.move();
+			img.move();
 		}
 
-		g2d.drawImage(ch.getPic().getImage(), ch.getX(), bird.getY(), ch.getWidth(), ch.getHeight(), this);
+		g2d.drawImage(img.getPic().getImage(), img.getX(), img.getY(), img.getWidth(), img.getHeight(), this);
 		drawObstacles(g2d);
 
 		if (screen == 'G'){
