@@ -12,7 +12,7 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 	private int key;
 	private ImageIcon background;
 	private Background bg;
-	private Image Icon loseBG;
+	private ImageIcon loseBG;
 	private Character img;
 	private int score = 0;
 	private char screen;
@@ -72,11 +72,10 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 			}
 			
 			return;		
-		}
-		}
+	}
 
 	public void initializeBackground(){
-		bg = new Background(getWidth());
+		bg = new Background(0);
 		background = new ImageIcon("skybg.jpg");
 		loseBG = new ImageIcon ("losebg.jpg");
 	}
@@ -124,6 +123,7 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 			bg.move();
 			img.move();
 		}
+		
 
 		g2d.drawImage(img.getPic().getImage(), img.getX(), img.getY(), img.getWidth(), img.getHeight(), this);
 		drawObstacles(g2d);
@@ -140,9 +140,9 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 
 	}
 
-	
-
-
+	public void drawObstacles(Graphics g) {
+    // draw obstacles here later
+}
 
 	//DO NOT DELETE
 	@Override
